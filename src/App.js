@@ -11,8 +11,15 @@ import Profile from './components/profile/profile';
 //All imports
 import { Routes, Route } from 'react-router-dom';
 
+//Alert
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+
 function App() {
   return (
+    <>
+    <ToastContainer />
     <Routes>
       <Route path='/' element={<Landing />} />
       <Route path='/register' element={<Register />} />
@@ -21,6 +28,7 @@ function App() {
       <Route path='/profile' element={<Profile />} />
       <Route path='*' element={<FourOwFour />} />
     </Routes>
+    </>
   );
 }
 

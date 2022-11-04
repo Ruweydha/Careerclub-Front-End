@@ -5,7 +5,8 @@ import React,{ useState } from 'react'
 import './css/navbar.css';
 
 //Module import
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
+
 
 function navbar() {
 
@@ -19,7 +20,7 @@ function navbar() {
     <section className="navbar">
         <article className="navbar-container">
             <div className="navbar-company">
-                <h1>CareerClub</h1>
+                <h1 style={{fontSize:"1.8rem"}}><Link to="/">CareerClub</Link></h1>
                 <div className="navbar-hamburger">
                     <div onClick={e=>usePop(true)}>
                         <span className="bar"></span>
@@ -33,7 +34,8 @@ function navbar() {
                     <p onClick={e=>usePop(false)}>&times;</p>
                 </div>
                 <ul className='navbar-links-ul'>
-                    <li><button onClick={e=>{navigate('/login')}}>Login</button></li>
+                    <li className='navbar-links-ul-login'><Link to="/login" style={{color:"white"}}><button>Login</button></Link></li>
+                    {/* <li className='navbar-links-ul-profile'><Link to="/profile" style={{color:"#0096c7"}}><button>Eugene</button></Link></li> */}
                 </ul>
             </div>
         </article>

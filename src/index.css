@@ -22,5 +22,25 @@ li{
 }
 
 span{
-  color:#0096c7;
+  color:red;
+}
+
+a{
+  color:black;
+  text-decoration: none;
+}
+
+.none{
+  display: none;
+}
+
+.formik-error{
+  color:#FF0D0D;
+  padding:.5rem 0;
+  font-size: .8rem;
+}
+
+.input-error{
+  border: 1px solid #FF0D0D !important;
+  transition: .3s;
 }

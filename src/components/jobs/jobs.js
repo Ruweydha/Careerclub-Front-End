@@ -7,6 +7,11 @@ import './css/jobs.css';
 import SideJob from '../minicomponents/SideJob/SideJob'
 import MainJob from '../minicomponents/MainJob/MainJob';
 
+//Icons Import
+import { MdNavigateNext,MdOutlineArrowBackIosNew } from 'react-icons/md';
+import { GrNext } from 'react-icons/gr'
+
+
 function jobs() {
 
 
@@ -38,6 +43,17 @@ function jobs() {
                 </div>
                 <div className="jobs-section-current">
                     <MainJob />
+                </div>
+                <div className="jobs-section-pagenation">
+                    <div>
+                        <p><MdOutlineArrowBackIosNew /></p>
+                        <p>1</p>
+                        <p>2</p>
+                        <p>3</p>
+                        <p>4</p>
+                        <p>5</p>
+                        <p><GrNext /></p>
+                    </div>
                 </div>
             </div>
 

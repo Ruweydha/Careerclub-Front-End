@@ -1,0 +1,13 @@
+.footer{
+    max-width: 1920px;
+    margin-inline:auto;
+}
+.footer-container{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-container p{
+    padding-right: .3rem;
+}
