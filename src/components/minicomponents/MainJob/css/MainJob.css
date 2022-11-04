@@ -1,0 +1,64 @@
+.main-job{
+    margin-block:1rem;
+    border: 1px solid hsl(0, 0%, 70%);
+    border-radius: .3rem;
+    transition: .3s ease-in-out;
+    background-color: white;
+}
+.main-job-title{
+    padding: 1rem .5rem;
+    border-bottom:1px solid hsl(0, 0%, 70%);
+    margin-bottom: 1rem;
+}
+.main-job-title-title{
+    padding-bottom: .2rem;
+    font-size: 1.4rem;
+}
+.main-job-title-company{
+    padding-bottom: .1rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 15%);
+}
+.main-job-title-location{
+    color: hsl(0, 0%, 30%);
+
+}
+.main-job-details{
+    padding:0 .5rem;
+}
+.main-job-details h1{
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+}
+.main-job-details div{
+    padding-bottom: .5rem;
+}
+.main-job-details-type h2,
+.main-job-details-description h3,
+.main-job-details-qualifications h3{
+    font-size: 1rem;
+    color:hsl(0, 0%, 20%);
+    font-weight: 700;
+    padding-bottom: .3rem;
+}
+
+.main-job-details-type p,
+.main-job-details-description p,
+.main-job-details-qualifications p{
+    font-size: .9rem;
+}
+
+.main-job-apply{
+    padding:.5rem;
+}
+
+.main-job-apply button{
+    height: 40px;
+    background-color: #0096c7;
+    border: 1px solid #0096c7;
+    color: white;
+    font-weight: 600;
+    padding-inline:.6rem;
+    border-radius: .3rem;
+    cursor: pointer;
+}

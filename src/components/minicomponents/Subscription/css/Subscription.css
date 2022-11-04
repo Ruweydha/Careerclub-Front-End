@@ -1,0 +1,38 @@
+.subscription{
+    border:1px solid hsl(0, 0%, 70%);
+    padding:1rem;
+    border-radius: .3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.subscription-details-tags{
+    padding-top: .5rem;
+    display: flex;
+    align-items: center;
+}
+.subscription-details-tags p{
+    margin-right: .2rem;
+    background-color: gray;
+    color:white;
+    font-weight: 600;
+    font-size: .7rem;
+    padding:.3rem;
+    border-radius: .2rem;
+}
+.subscription-unsubscribe button{
+    background-color: #0096c7;
+    border:1px solid #0096c7;
+    color:white;
+    padding:.5rem;
+    border-radius: .2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.subscription-unsubscribe button:hover{
+    background-color: hsl(195, 100%, 42%);
+    border:1px solid hsl(195, 100%, 42%);
+    transition: .3s ease-in-out;
+}

@@ -1,0 +1,120 @@
+.notification{
+    max-width: 1920px;
+    margin-inline:auto;
+    margin-block: 1.5rem;
+}
+
+.notification-container{
+    max-width: 1200px;
+    margin-inline:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.notification-container button{
+    height: 40px;
+    padding-inline:1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #0096c7;
+    border:1px solid #0096c7;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.notification-container button:hover{
+    background-color: hsl(195, 100%, 42%);
+    border:1px solid hsl(195, 100%, 42%);
+    transition: .3s ease-in-out;
+}
+.notification-form.none{
+    display: none;
+}
+.notification-form{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 2000;
+    height: 100vh;
+    background-image: linear-gradient(hsla(0, 0%, 0%,.8),hsla(0, 0%, 0%,.8));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.notification-form div label{
+    font-weight: 600;
+    font-size: .8rem;
+    color:rgb(42,42,42);
+}
+.notifcation-form-add{
+    padding:1rem;
+    border-radius: .5rem;
+    background-color: white;
+    width:95%;
+    max-width:450px;
+}
+
+.notification-form-title{
+    padding-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notification-form-title h1{
+    font-size: 1.5rem;
+}
+.notification-form-title p{
+    height: 1.5rem;
+    width:1.5rem;
+    border-radius: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(205,204,202);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.notification-form-title p:hover{
+    background-color: hsl(40, 3%, 90%);
+    transition: .3s;
+    color:red;
+}
+.notification-form div:not(:first-child){
+    margin-top: .5rem;
+}
+
+.notification-form input,
+.notification-form select{
+    width:100%;
+    height: 40px;
+    border:1px solid #949494;
+    margin-block: .2rem;
+    padding-left: .3rem;
+    border-radius: .3rem;
+}
+
+.notification-form button{
+    margin-top: 1rem;
+    width: 100%;
+    height: 40px;
+    background-color: #0096c7;
+    border:1px solid #0096c7;
+    color:white;
+    font-size: .9rem;
+    font-weight: 600;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.notification-form button:hover{
+    background-color: hsl(195, 100%, 42%);
+    border:1px solid hsl(195, 100%, 42%);
+    transition: .3s ease-in-out;
+}

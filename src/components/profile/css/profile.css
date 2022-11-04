@@ -1,0 +1,160 @@
+.profile{
+    max-width:1920px;
+    margin-inline:auto;
+}
+.profile-container{
+    margin-top: 2rem;
+    width:95%;
+    max-width: 1200px;
+    margin-inline:auto;
+}
+.profile-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block:.5rem;
+}
+.profile-name h1{
+    font-size: 2rem;
+}
+.profile-name,
+.proifle-bio,
+.profile-mini,
+.profile-buttons{
+    padding-inline:1rem;
+}
+.profile-mini{
+    margin-top: 1rem;
+}
+.profile-mini div{
+    padding-bottom: 1rem;
+}
+.profile-mini div h2{
+    font-size: 1rem;
+    font-weight: 800;
+}
+.profile-buttons button{
+    font-weight: 600;
+    padding: .5rem;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+.profile-buttons button:first-child{
+    margin-right: .3rem;
+}
+.profile-buttons-logout{
+    border:1px solid hsl(0, 0%, 70%);
+    background-color: white;
+    color:#0096c7;
+}
+.profile-buttons-update{
+    background-color: #0096c7;
+    border:1px solid #0096c7;
+    color:white;
+}
+
+.profile-saved-jobs,
+.profile-mail{
+    padding:1rem;
+}
+.profile-saved-jobs-title,
+.profile-mail-title{
+    padding-bottom:1rem;
+    font-size: 1.5rem;
+}
+.profile-saved-jobs-list,
+.profile-mail-list{
+    display: grid;
+    grid-gap: .5rem;
+}
+
+.profile-update.none{
+    display: none;
+}
+.profile-update{
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    height: 100vh;
+    background-image: linear-gradient(hsla(0, 0%, 0%,.8),hsla(0, 0%, 0%,.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    position: fixed;
+}
+.profile-update-form{
+    padding:1rem;
+    border-radius: .5rem;
+    background-color: white;
+    width:95%;
+    max-width:450px;
+}
+.profile-update-form-title{
+    padding-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-update-form-title p{
+    height: 1.5rem;
+    width:1.5rem;
+    border-radius: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(205,204,202);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.profile-update-form-title p:hover{
+    background-color: hsl(40, 3%, 90%);
+    transition: .3s;
+    color:red;
+}
+.profile-update-form-phone{
+    margin-top:1rem;
+}
+.profile-update-form input{
+    width:100%;
+    height: 40px;
+    border:1px solid #949494;
+    margin-block: .2rem;
+    padding-left: .3rem;
+    border-radius: .3rem;
+}
+.profile-update-form textarea{
+    border-radius: .3rem;
+    width:100%;
+    height: 200px;
+    resize: none;
+    padding-left: .3rem;
+    padding-top: .3rem;
+    border:1px solid #949494;
+
+}
+.profile-update-form textarea:focus,
+.profile-update-form input:focus{
+    outline: none;
+    border:1px solid #0096c7;
+}
+.profile-update-form button{
+    margin-top: .5rem;
+    width:100%;
+    height: 40px;
+    background-color: #0096c7;
+    border:1px solid #0096c7;
+    color:white;
+    border-radius: .3rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+@media (min-width:768px) {
+    .profile-saved-jobs-list,
+    .profile-mail-list{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
