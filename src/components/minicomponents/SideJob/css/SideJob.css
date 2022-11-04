@@ -1,0 +1,53 @@
+.side-job{
+    border: 1px solid hsl(0, 0%, 70%);
+    width:100%;
+    padding:.5rem;
+    border-radius: .3rem;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    background-color: white;
+}
+.side-job:hover{
+    transform: translateY(-3px);
+    box-shadow:  0 0 1em .2rem hsl(0, 0%, 95%);
+    transition: .3s ease-in-out;
+}
+.side-job-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: .2rem;
+    font-size: 1.4rem;
+}
+.side-job-title-save{
+    cursor: pointer;
+}
+.side-job-company h3{
+    padding-bottom: .1rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 15%);
+}
+.side-job-location p{
+    color: hsl(0, 0%, 30%);
+}
+.side-job-more{
+    margin-top:1rem;
+    display: flex;
+    align-items: center;
+}
+.side-job-more p{
+    background-color: gray;
+    color:white;
+    font-weight: 600;
+    font-size: .7rem;
+    padding:.3rem;
+    border-radius: .2rem;
+
+}
+.side-job-more p:not(:first-child){
+    margin-left: .3rem;
+}
+.side-job-posted{
+    padding-top: 2rem;
+    font-size: .8rem;
+}

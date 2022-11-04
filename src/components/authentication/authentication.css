@@ -1,0 +1,107 @@
+.register,
+.login,
+.code{
+    height: 100vh;
+    max-width:1920px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(243,242,241);
+}
+.register-form,
+.login-form,
+.code-form{
+    border:2px solid rgb(212,210,208);
+    border-radius: .5rem;
+    background-color: white;
+    width:90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+.register-form-company,
+.login-form-company,
+.code-form-company{
+    padding-block:2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.register-form div,
+.login-form div,
+.code-form div{
+    padding-block:.5rem;
+    width: 90%;
+    margin-inline: auto;
+}
+.register-form div label,
+.login-form div label,
+.code-form div label{
+    font-weight: 600;
+    color:rgb(42,42,42);
+}
+.register-form div input,
+.login-form div input,
+.code-form div input{
+    margin-top: .2rem;
+    width:100%;
+    height: 48px;
+    border:2px solid #949494;
+    border-radius: .3rem;
+    padding-left: .5rem;
+    font-size: .9rem;
+    transition: .3s ease-in-out;
+}
+.register-form div input:focus,
+.login-form div input:focus,
+.code-form div input:focus{
+    outline: none;
+    border:2px solid #0096c7;
+    transition: .3s ease-in-out;
+}
+
+
+.register-form-submit,
+.login-form-submit,
+.code-form-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 1rem;
+    width:100%;
+}
+.register-form-submit button,
+.login-form-submit button,
+.code-form-submit button{
+    cursor: pointer;
+    width:90%;
+    height: 54px;
+    background-color: #0096c7;
+    border:1px solid #0096c7;
+    color:white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: .2rem;
+    transition: .3s ease-in-out;
+}
+.register-form-submit button:hover,
+.login-form-submit button:hover,
+.code-form-submit button:hover{
+    background-color: hsl(195, 100%, 45%);
+    border:1px solid hsl(195, 100%, 45%);
+    transition: .3s ease-in-out;
+}
+
+.register-form-redirect,
+.login-form-redirect{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 1rem;
+    font-size: .9rem;
+}

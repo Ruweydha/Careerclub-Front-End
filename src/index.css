@@ -17,3 +17,10 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
+li{
+  list-style: none;
+}
+
+span{
+  color:#0096c7;
+}

@@ -1,0 +1,22 @@
+.fourowfour{
+    max-width:1920px;
+    margin-inline:auto;
+    
+}
+.fourowfour-container{
+    height: 100vh;
+    max-width: 1200px;
+    margin-inline:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fourowfour-container h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fourowfour-container h3 h1{
+    padding-right: .3rem;
+    font-size: 3rem;
+}
