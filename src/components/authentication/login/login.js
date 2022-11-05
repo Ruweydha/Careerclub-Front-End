@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React from 'react'
+import { useState } from 'react'
 
 //Css
 import '../authentication.css';
@@ -20,7 +20,17 @@ import 'react-toastify/dist/ReactToastify.css'
 //Axios
 import axios from 'axios'
 
+
 function login() {
+
+
+    //Loading
+    let [loading,useLoading] = useState(false)
+
+
+    //Navigate Initialization
+    let navigate = useNavigate()
+
 
     //Formik intialization
     let formik = useFormik({
@@ -45,7 +55,20 @@ function login() {
             return errors
         },
         onSubmit:values=>{
-            alert("hello")
+            useLoading(true)
+            axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login/`,{
+                email:values.email,
+                password:values.password
+            }).then(res=>{
+                useLoading(false)
+                localStorage.setItem('otpToken', res.data.accessToken);
+                toast('Logged in successfully')
+                navigate('/')
+                navigate('/code')
+            }).catch(err=>{
+                useLoading(false)
+                toast.error(err.response.data.message)
+            })
         }
     })
 
@@ -67,7 +90,7 @@ function login() {
                 {formik.errors.password && formik.touched.password ?<p className='formik-error'>{formik.errors.password}</p>:''}
             </div>
             <article className="login-form-submit">
-                <button type="submit">Login</button>
+                <button type="submit" disabled={loading?true:false}>{loading?<BeatLoader loading size={18} color="white" />:"Login"}</button>
             </article>
             <article className="login-form-redirect">
                 <p>Don't have an account? <Link to="/register">Register</Link></p>

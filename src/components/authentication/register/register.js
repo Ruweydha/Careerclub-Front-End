@@ -65,7 +65,7 @@ function register() {
         },
         onSubmit:values=>{
             useLoading(true)
-            axios.post('http://localhost:8090/users/create/',{
+            axios.post(`${process.env.REACT_APP_BASE_URL}/users/create/`,{
                 username:values.username,
                 email:values.email,
                 password:values.password
