@@ -4,17 +4,17 @@ import React from 'react'
 //Css
 import './css/Subscription.css';
 
-function Subscription() {
+function Subscription({subscription}) {
     return (
         <article className="subscription">
             <div className="subscription-details">
                 <div className="subscription-details-name">
-                    <h1>Testing</h1>
+                    <h1>{subscription.alertName}</h1>
                 </div>
                 <div className="subscription-details-tags">
-                    <p>Remote</p>
-                    <p>Law</p>
-                    <p>Nairobi</p>
+                    <p>{subscription.industry.name}</p>
+                    <p>{subscription.jobType.name}</p>
+                    <p>{subscription.location.name}</p>
                 </div>
             </div>
             <div className="subscription-unsubscribe">

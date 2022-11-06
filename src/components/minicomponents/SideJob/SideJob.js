@@ -5,11 +5,10 @@ import { useState } from 'react'
 import './css/SideJob.css';
 
 //React icons
-// eslint-disable-next-line no-unused-vars
 import { BsBookmarkHeart,BsBookmarkHeartFill } from 'react-icons/bs'
 
 
-function SideJob() {
+function SideJob({jobs}) {
 
   //Save state
   let [saved, useSaved] = useState(false)
@@ -27,22 +26,22 @@ function SideJob() {
   let saving = saved ? <BsBookmarkHeartFill /> : <BsBookmarkHeart />;
 
   return (
-    <article className="side-job">
+    <article className="side-job" onClick={e=>alert(jobs.id)}>
       <div className="side-job-title">
-        <h1>Junior Software Developer</h1>
+        <h1>{jobs.title}</h1>
         <div className="side-job-title-save" onClick={saveSwitching}>
           {saving}
         </div>
       </div>
       <div className="side-job-company">
-        <h3>TestingPLC</h3>
+        <h3>{jobs.company.name}</h3>
       </div>
       <div className="side-job-location">
-        <p>Nairobi, Kenya</p>
+        <p>{jobs.location.name}</p>
       </div>
       <div className="side-job-more">
-        <p className="side-job-more-type">Full-Time</p>
-        <p className="side-job-more-industry">Software Development</p>
+        <p className="side-job-more-type">{jobs.jobType.name}</p>
+        <p className="side-job-more-industry">{jobs.industry.name}</p>
       </div>
       <div className="side-job-posted">
         <p>Posted 3 days ago</p>

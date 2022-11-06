@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 //Slice imports
-import OtpSlice from './features/otp/OtpSlice'
+import AuthSlice from './features/Auth/AuthSlice'
+import UserSlice from './features/User/UserSlice'
 
 
 let store = configureStore({
     reducer:{
-        otp:OtpSlice.reducer
+        otp:AuthSlice.reducer,
+        user:UserSlice.reducer
     }
 })
 

@@ -6,6 +6,7 @@
     transition: .3s ease-in-out;
     cursor: pointer;
     background-color: white;
+    max-height: 180px;
 }
 .side-job:hover{
     transform: translateY(-3px);

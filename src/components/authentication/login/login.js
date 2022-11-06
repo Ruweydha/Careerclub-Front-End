@@ -21,7 +21,9 @@ import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 
 
+
 function login() {
+
 
 
     //Loading
@@ -56,13 +58,13 @@ function login() {
         },
         onSubmit:values=>{
             useLoading(true)
-            axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login/`,{
+            axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`,{
                 email:values.email,
                 password:values.password
             }).then(res=>{
                 useLoading(false)
                 localStorage.setItem('otpToken', res.data.accessToken);
-                toast('Logged in successfully')
+                toast('Code sent to your email')
                 navigate('/')
                 navigate('/code')
             }).catch(err=>{
@@ -90,7 +92,7 @@ function login() {
                 {formik.errors.password && formik.touched.password ?<p className='formik-error'>{formik.errors.password}</p>:''}
             </div>
             <article className="login-form-submit">
-                <button type="submit" disabled={loading?true:false}>{loading?<BeatLoader loading size={18} color="white" />:"Login"}</button>
+                <button type="submit" disabled={loading?true:false} style={loading?{cursor:"progress"}:{cursor:"pointer"}} >{loading?<BeatLoader loading size={18} color="white" />:"Login"}</button>
             </article>
             <article className="login-form-redirect">
                 <p>Don't have an account? <Link to="/register">Register</Link></p>
