@@ -1,4 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
+
+import { useState,useEffect } from 'react'
 
 //css
 import './css/jobs.css';
@@ -11,9 +14,30 @@ import MainJob from '../minicomponents/MainJob/MainJob';
 import { MdNavigateNext,MdOutlineArrowBackIosNew } from 'react-icons/md';
 import { GrNext } from 'react-icons/gr'
 
+//Axios
+import axios from 'axios'
+
+//Redux
+import { useSelector } from 'react-redux'
 
 function jobs() {
 
+    //States
+    let [gigs,useGigs] = useState([])
+
+    useEffect(()=>{
+        axios.get(`${process.env.REACT_APP_BASE_URL}/jobs`)
+        .then(res=>{
+            useGigs(res.data._embedded.jobList)
+        }).catch(err=>{
+            console.log(err)
+        })
+    },[gigs])
+
+    let gig = gigs.map(j=><SideJob  jobs={j} />)
+
+    //Main Job
+    let mainJob = useSelector(state=>state.job)
 
     return (
     <section className="jobs">
@@ -28,21 +52,16 @@ function jobs() {
                 </article>
             </form>
             <div className="jobs-showing">
-                <p>Showing <span>10</span> jobs</p>
+                <p>Showing <span>{gigs.length}</span> jobs</p>
             </div>
             <div className="jobs-section">
                 <div className="jobs-section-list">
-                    <SideJob />
-                    <SideJob />
-                    <SideJob />
-                    <SideJob />
-                    <SideJob />
-                    <SideJob />
-                    <SideJob />
-                    <SideJob />
+                    {
+                        gig
+                    }
                 </div>
                 <div className="jobs-section-current">
-                    <MainJob />
+                    <MainJob job={mainJob} />
                 </div>
                 <div className="jobs-section-pagenation">
                     <div>

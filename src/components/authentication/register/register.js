@@ -20,8 +20,6 @@ import 'react-toastify/dist/ReactToastify.css'
 //Axios
 import axios from 'axios';
 
-
-
 function register() {
 
     //Navigate intialization
@@ -65,7 +63,7 @@ function register() {
         },
         onSubmit:values=>{
             useLoading(true)
-            axios.post('http://localhost:8090/users/create/',{
+            axios.post(`${process.env.REACT_APP_BASE_URL}/users/create/`,{
                 username:values.username,
                 email:values.email,
                 password:values.password
@@ -112,7 +110,7 @@ function register() {
                 {formik.errors.passwordConfirm && formik.touched.passwordConfirm ?<p className='formik-error'>{formik.errors.passwordConfirm}</p>:''}
             </div>
             <article className="register-form-submit">
-                <button type="submit" disabled={loading?true:false}>{loading?<BeatLoader loading size={18} color="white" />:"Register"}</button>
+                <button type="submit" disabled={loading?true:false} style={loading?{cursor:"progress"}:{cursor:"pointer"}}>{loading?<BeatLoader loading size={18} color="white" />:"Register"}</button>
             </article>
             <article className="register-form-redirect">
                 <p>Already have an account? <Link to="/login">Login</Link></p>

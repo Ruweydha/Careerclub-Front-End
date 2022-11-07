@@ -152,6 +152,14 @@
     font-size: 1rem;
     cursor: pointer;
 }
+.profile-mail-list-none,
+.profile-saved-jobs-none{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
 @media (min-width:768px) {
     .profile-saved-jobs-list,
     .profile-mail-list{
