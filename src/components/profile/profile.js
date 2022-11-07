@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
@@ -95,10 +96,13 @@ function profile() {
 
 
     let logout = ()=>{
-        localStorage.removeItem('accessToken')
-        localStorage.removeItem('refreshToken')
-        dispatch(UserSlice.actions.resetUser())
-        navigate('/')
+        let askToLogout = confirm("Are you aure you want to logout")
+        if(askToLogout){
+            localStorage.removeItem('accessToken')
+            localStorage.removeItem('refreshToken')
+            dispatch(UserSlice.actions.resetUser())
+            navigate('/')
+        }
     }
 
     useEffect(()=>{
@@ -130,7 +134,7 @@ function profile() {
             .catch(err=>console.log(err.response))
     },[savedJobs])
 
-    let subs = subscriptions.map(s=><Subscribe subscription={s} />)
+    let subs = subscriptions.map(s=><Subscribe subscription={s} userId={user.id} />)
 
     return (
         <>

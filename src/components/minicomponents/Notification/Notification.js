@@ -10,8 +10,19 @@ import './css/Notification.css'
 //Spinner
 import { BeatLoader } from 'react-spinners'
 
+//Axios
+import axios from 'axios'
+
+//Redux
+import { useSelector } from 'react-redux'
+
+//Toast
+import { toast } from 'react-toastify';
+
 
 function Notification() {
+    //User
+    let user = useSelector(state=>state.user)
 
     let [loading,useLoading] = useState(false)
     let [pop, usePop] = useState(false)
@@ -19,6 +30,7 @@ function Notification() {
     let handlePop = ()=>{
         pop?usePop(false):usePop(true)
     }
+
 
     //Formik init
     let formik = useFormik({
@@ -29,6 +41,29 @@ function Notification() {
             location:""
         },
         onSubmit:values=>{
+            useLoading(true)
+            axios({
+                method: "post",
+                url: `${process.env.REACT_APP_BASE_URL}/mail-list/subscribe`,
+                data: {
+                    alertName: values.alertName,
+                    jobTypeName: values.jobType,
+                    industryName: values.industry,
+                    location: values.location,
+                    userId: user.id
+                },
+                headers: { 
+                    "Authorization" : `Bearer ${localStorage.getItem('accessToken')}`
+                }})
+                .then(res=>{
+                    usePop(false)
+                    useLoading(false)
+                    toast("Subscribed successfully.")
+                })
+                .catch(err=>{
+                    useLoading(false)
+                    toast.error(err.response.data.message)
+                })
         }
     })
 
@@ -53,7 +88,7 @@ function Notification() {
                             <option value="select">Select Job Type</option>
                             <option value="fulltime">Full-Time</option>
                             <option value="remote">Remote</option>
-                            <option value="parttime">Part-Time</option>
+                            <option value="part-time">Part-Time</option>
                         </select>
                     </div>
                     <div>
@@ -61,8 +96,12 @@ function Notification() {
                         <select name="industry" id="industry" {...formik.getFieldProps('industry')}>
                             <option value="select">Select Industry</option>
                             <option value="law">Law</option>
-                            <option value="eduaction">Education</option>
+                            <option value="education">Education</option>
                             <option value="it">IT</option>
+                            <option value="advertisement">Advertisement</option>
+                            <option value="real estate">Real estate</option>
+                            <option value="tourism">Tourism</option>
+                            <option value="retail">Retail</option>
                         </select>
                     </div>
                     <div>
@@ -70,8 +109,11 @@ function Notification() {
                         <select name="location" id="location" {...formik.getFieldProps('location')}>
                             <option value="select">Select Location</option>
                             <option value="nairobi">Nairbi</option>
-                            <option value="rest">Rest Of Kenya</option>
-                            <option value="outside">Outside Kenya</option>
+                            <option value="rest of kenya">Rest Of Kenya</option>
+                            <option value="outside kenya">Outside Kenya</option>
+                            <option value="nakuru">Nakuru</option>
+                            <option value="mombasa">Mombasa</option>
+                            <option value="kisumu">Kisumu</option>
                         </select>
                     </div>
                     <button type="submit"disabled={loading?true:false} style={loading?{cursor:"progress"}:{cursor:"pointer"}}>{loading?<BeatLoader loading size={18} color="white" />:"Subscribe"}</button>

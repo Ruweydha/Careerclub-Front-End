@@ -17,6 +17,8 @@ import { GrNext } from 'react-icons/gr'
 //Axios
 import axios from 'axios'
 
+//Redux
+import { useSelector } from 'react-redux'
 
 function jobs() {
 
@@ -32,12 +34,10 @@ function jobs() {
         })
     },[gigs])
 
-    let testing = id=>{
-        alert(id)
-    }
+    let gig = gigs.map(j=><SideJob  jobs={j} />)
 
-    let gig = gigs.map(j=><SideJob onClick={e=>testing(j.id)} jobs={j} />)
-
+    //Main Job
+    let mainJob = useSelector(state=>state.job)
 
     return (
     <section className="jobs">
@@ -61,7 +61,7 @@ function jobs() {
                     }
                 </div>
                 <div className="jobs-section-current">
-                    <MainJob />
+                    <MainJob job={mainJob} />
                 </div>
                 <div className="jobs-section-pagenation">
                     <div>
